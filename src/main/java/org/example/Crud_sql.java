@@ -65,6 +65,24 @@ public class Crud_sql {
         }
     }
 
+    public void updateUserName(int id, String newName) {
+        String url = "jdbc:mysql://localhost:3306/testdb";
+        String user = "root";
+        String password = "bordeaux@33170";
+        String query = "UPDATE User SET name = ? WHERE id = ?";
+        try (Connection conn = DriverManager.getConnection(url, user, password);
+             PreparedStatement stmt = conn.prepareStatement(query)) {
+            stmt.setString(1, newName);
+            stmt.setInt(2, id);
+            int rowsUpdated = stmt.executeUpdate();
+            if (rowsUpdated > 0) {
+                System.out.println("Nom mis à jour avec succès !");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public void deleteUser(int id) {
         String url = "jdbc:mysql://localhost:3306/testdb";
         String user = "root";
