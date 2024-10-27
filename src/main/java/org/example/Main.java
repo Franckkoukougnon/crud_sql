@@ -3,28 +3,31 @@ package org.example;
 public class Main {
     public static void main(String[] args) {
 
-        Crud_sql newUser = new Crud_sql();
-      //  newUser.inserInto("Ange", "Koukougnon", 32, "Abidjan");
 
-        Crud_sql updateUser = new Crud_sql();
-    //   updateUser.updateUserEmail(3, "IssacK@test.com");
 
-        Crud_sql deleteUser = new Crud_sql();
-      //  deleteUser.deleteUser(1);
+        //Creation of an object of the FunctionList class
+        FunctionList functionList = new FunctionList();
 
-        Crud_sql updateUserName = new Crud_sql();
-     //   updateUserName.updateUserName(3, "Isaac Koukougnon");
+        //Method to add students
+        functionList.addEtudiant("Ange Koukougnon");
+        functionList.addEtudiant("Leila Nabintou Cisse");
+        functionList.addEtudiant("Issac Koukougnon");
 
-        Crud_sql allUsers = new Crud_sql();
-     //   allUsers.getAllUsers();
+        //Method to show the list of students
+        functionList.showEtudiants();
 
-        CountString countString = new CountString();
-        countString.countString("Leila Nabintou Cisse ");
+        //Method to delete a student
+        functionList.deleteEtudiant("Issac Koukougnon");
 
-        countString.replaceVoyelle("Leila Nabintou Cisse ");
+       //Method to show the list of students
+        functionList.showEtudiants();
 
-       String result =  countString.UpperCaseFirstLetter("koukougnon");
-        System.out.println(result);
+        //Method to update a student
+        functionList.updateEtudiant("Ange Koukougnon", "Ange Koukougnon Junior");
+
+        //Method to show the list of students
+        functionList.showEtudiants();
+
 
 
 

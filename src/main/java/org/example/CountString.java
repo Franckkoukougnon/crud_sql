@@ -2,7 +2,7 @@ package org.example;
 
 public class CountString {
 
-    public void countString(String str) {
+    public void countVoyelle(String str) {
         int count = 0;
         String voyelle = "aeiouyAEIOUYéèàùâêîôûäëïöü";
         for (int i = 0; i < str.length(); i++) {
@@ -26,13 +26,20 @@ public class CountString {
     public String UpperCaseFirstLetter(String str) {
         if(str == null || str.isEmpty()) {
             return str;
-
         }
-
-
         String firstLetter = str.substring(0, 1).toUpperCase();
-        String restLetters = str.substring(1).toLowerCase();
-        return firstLetter + restLetters;
+        String restLetters = str.substring(1);
+        return firstLetter + restLetters ;
+    }
 
+    public String countNumberLetter(String str) {
+        int count = 0;
+        String StringIgnore =" ,.;:!?/";
+        for (int i = 0; i < str.length(); i++) {
+            if (!StringIgnore.contains(String.valueOf(str.charAt(i)))) {
+                count++;
+            }
+        }
+        return "Le nombre de lettre dans cette phrase est de : " + count + " lettres";
     }
 }
